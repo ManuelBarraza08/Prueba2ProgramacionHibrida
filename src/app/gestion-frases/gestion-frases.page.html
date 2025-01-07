@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestionar Frases</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-lista-citas [frases]="frases" (eliminarFrase)="eliminarFrase($event)"></app-lista-citas>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/agregar-frase']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+

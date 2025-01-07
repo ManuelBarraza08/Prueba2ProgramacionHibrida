@@ -1,0 +1,19 @@
+<form [formGroup]="fraseForm" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label position="floating">Frase</ion-label>
+    <ion-input formControlName="frase"></ion-input>
+  </ion-item>
+  <ion-note color="danger" *ngIf="fraseForm.controls['frase'].hasError('minlength') && fraseForm.controls['frase'].touched">
+    La frase debe tener al menos 5 caracteres.
+  </ion-note>
+
+  <ion-item>
+    <ion-label position="floating">Autor</ion-label>
+    <ion-input formControlName="autor"></ion-input>
+  </ion-item>
+  <ion-note color="danger" *ngIf="fraseForm.controls['autor'].hasError('minlength') && fraseForm.controls['autor'].touched">
+    El autor debe tener al menos 2 caracteres.
+  </ion-note>
+
+  <ion-button expand="full" type="submit" [disabled]="!fraseForm.valid">Guardar</ion-button>
+</form>

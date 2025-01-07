@@ -1,0 +1,9 @@
+<ion-list>
+  <ion-item *ngFor="let frase of frases; let i = index">
+    <ion-label>
+      <h2>{{ frase.frase }}</h2>
+      <p>{{ frase.autor }}</p>
+    </ion-label>
+    <ion-button color="danger" (click)="onEliminarFrase(i)">Eliminar</ion-button>
+  </ion-item>
+</ion-list>
